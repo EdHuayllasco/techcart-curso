@@ -1,6 +1,4 @@
-/* TechCart. Clase 4: punto de partida = como quedó al final de la Clase 3
-   (cabecera con Flexbox, catálogo con Grid responsive, tarjetas en columna).
-   Lo de HOY —colocar con span, alinear, grid-template-areas— se escribe en clase. */
+/* TechCart. Clase 4: estilos base (cabecera con Flexbox, catálogo con Grid responsive). */
 
 * { box-sizing: border-box; }              /* el ancho incluye padding y borde */
 
@@ -14,7 +12,7 @@ body {
   line-height: 1.5;      /* alto de linea */
 }
 
-/* ----- Cabecera con FLEXBOX (Clase 3) ----- */
+/* ----- Cabecera con Flexbox ----- */
 header {
   display: flex;                  /* enciende Flexbox: h1 y nav en fila */
   justify-content: space-between; /* logo a un extremo, menu al otro (eje principal) */
@@ -28,7 +26,6 @@ header {
 }
 header h1 { color: #0066cc; margin: 0; }   /* color de marca; sin margen */
 
-/* El <ul> del menu tambien es un contenedor flex (Clase 3): enlaces en fila. */
 nav ul {
   display: flex;         /* enlaces en fila */
   gap: 20px;             /* separacion pareja, sin margin por elemento */
@@ -41,17 +38,16 @@ nav a:hover { text-decoration: underline; }                 /* subraya al pasar 
 
 h2 { font-size: 1.4rem; }   /* tamaño de subtitulo */
 
-/* ----- Catálogo con CSS GRID (arranque en la Clase 3) -----
+/* ----- Catálogo con CSS Grid -----
    "Tantas columnas como quepan, de minimo 200px, repartiendo el resto":
-   responsive sin media queries. El gap separa filas y columnas. */
+   responsive sin media queries. */
 .productos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
 }
 
-/* Cada tarjeta es contenedor flex EN COLUMNA (Clase 3).
-   Ojo: ya NO fija su ancho — el ancho lo da la columna del grid. */
+/* Cada tarjeta es un contenedor flex en columna; su ancho lo da la columna del grid. */
 article {
   display: flex;
   flex-direction: column;   /* imagen, nombre, precio, boton apilados */
@@ -88,8 +84,6 @@ button {
 }
 button:hover { filter: brightness(1.1); }  /* se aclara al pasar el mouse */
 
-/* Nacio para demostrar especificidad (Clase 2).
-   Hoy, en clase, esta tarjeta ademas ocupara 2 columnas (grid-column: span 2). */
 .destacado {
   border-color: #0066cc; /* borde azul */
   border-width: 2px;     /* borde mas grueso */
@@ -113,8 +107,6 @@ button:hover { filter: brightness(1.1); }  /* se aclara al pasar el mouse */
 fieldset { border: 1px solid #d2d2d7; border-radius: 10px; margin-bottom: 1rem; padding: 1rem; } /* marco del grupo */
 legend { font-weight: 600; padding: 0 .4rem; }  /* titulo del grupo */
 
-/* El footer sigue simple a proposito: hoy, en clase, lo rearmamos como el de
-   una tienda real (era la tarea dificil de Flexbox de la Clase 3). */
 footer {
   text-align: center;    /* centrado */
   color: #6e6e73;        /* color tenue */

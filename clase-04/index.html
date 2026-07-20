@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <!--
   Clase 4 — CSS Grid: colocación y maquetación.
-  Punto de partida: el código TAL COMO QUEDÓ al final de la Clase 3:
+  Estructura de la página:
     1) el <header> y el menú están maquetados con Flexbox;
-    2) las tarjetas viven en <div class="productos">, que ya es una cuadrícula
+    2) las tarjetas viven en <div class="productos">, una cuadrícula
        responsive con CSS Grid (auto-fill + minmax) — ver css/styles.css;
     3) cada tarjeta usa Flexbox en columna para su contenido.
-  Hoy se escribe EN CLASE: colocar con líneas y span, alinear en la celda y
-  maquetar la página con grid-template-areas (más una barra lateral nueva).
-  La clase "destacado" de la primera tarjeta (de la Clase 2) hoy cobra vida:
-  será el producto que ocupe 2 columnas.
 -->
 <html lang="es">
 <head>
@@ -44,7 +40,7 @@
       <h2>Catálogo de productos</h2>
 
       <!--
-        <div class="productos">: el CONTENEDOR del catálogo (Clase 3).
+        <div class="productos">: el contenedor del catálogo.
         En el CSS es display: grid — sus hijos directos (los <article>)
         se colocan en las celdas de la cuadrícula.
       -->
@@ -54,7 +50,7 @@
         Cada producto es un <article>: contenido autónomo (una tarjeta).
         <figure> + <figcaption>: agrupan una imagen con su leyenda.
       -->
-      <!-- class="destacado": nació para especificidad (Clase 2); hoy ocupará 2 columnas. -->
+      <!-- class="destacado": la usamos en el CSS para resaltar esta tarjeta. -->
       <article class="destacado">
         <figure>
           <img src="https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/thumbnail.webp"
