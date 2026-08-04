@@ -7,23 +7,27 @@ botones **responden** al clic y el carrito **sobrevive al refresco**.
 
 ## Contenido de la carpeta (y en qué estado está)
 
-Esta carpeta arranca en el **punto donde queda la clase al llegar al receso**: los módulos ya están
-separados, pero la tienda todavía no reacciona.
+Esta carpeta es el **punto de partida**: el proyecto tal como quedó al terminar la Clase 8, que se
+dictó **hasta el `rest`** (los tres puntos juntando parámetros) y ahí se cortó.
 
-- `index.html` y `css/styles.css`: TechCart tal como quedó en la Clase 6, con el `<script>` ya
-  convertido en **módulo** (`type="module"`). El catálogo sigue escrito a mano con cuatro
-  `<article>`: **esas tarjetas se borran en clase**, cuando JavaScript aprenda a pintarlas.
-- `js/datos.js`: el catálogo. Cada producto ahora tiene `id` e `imagen` (el `id` porque el carrito
-  necesita saber cuál producto es; la `imagen` porque si JS dibuja la tarjeta, tiene que saber qué
-  foto poner). Ojo con el último producto.
-- `js/carrito.js`: el dinero. `IGV`, `resumenCarrito`, `conDescuento` y `masCaroDe`.
-- `js/formato.js`: un solo trabajo, y con `export default`.
-- `js/ui.js`: cómo se ve un producto. Hoy devuelve texto; en clase le entran etiquetas HTML.
-- `js/main.js`: orquesta. Solo importa, usa y muestra en consola.
+- `index.html` y `css/styles.css`: TechCart con Tailwind v4, igual que en la Clase 6. El catálogo
+  sigue escrito a mano con cuatro `<article>`, y el `<script>` sigue siendo un script normal
+  (`defer`).
+- `js/main.js`: **un solo archivo** con todo lo de las Clases 7 y 8 — el array de productos,
+  `map`/`filter`/`reduce`, los dos difíciles (`valorCategoria` y `resumenCarrito`), los template
+  literals, la desestructuración y el spread/rest. La última línea marca dónde nos quedamos.
 
-> **Si te quedaste atrás en la Clase 8, descarga esta carpeta y arrancas parejo.** Las dos sesiones
-> anteriores se cortaron a mitad, así que este es el punto de partida común. Lo que se escribe
-> **durante** la clase es el DOM, los eventos y el `localStorage`.
+> **Si te quedaste atrás, descarga esta carpeta y arrancas parejo.** Las dos sesiones anteriores se
+> cortaron a mitad, así que este es el punto de partida común de todos.
+
+**Lo que se escribe durante la clase** (y por eso **no** está en esta carpeta):
+
+1. El ejercicio de spread que faltó: `aplicarDescuento` y ordenar sin mutar.
+2. Propiedades abreviadas, parámetros por defecto, `find`, `?.` y `??`.
+3. **Partir `main.js` en cinco módulos**: `datos.js`, `carrito.js`, `formato.js`, `ui.js` y
+   `main.js`, y cambiar el `<script>` a `type="module"`.
+4. El **DOM**: pintar el catálogo desde el array (y borrar las tarjetas escritas a mano), los
+   eventos y el `localStorage`.
 
 ## Herramientas de hoy
 
