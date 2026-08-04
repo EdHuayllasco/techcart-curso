@@ -98,4 +98,18 @@ dictó **hasta el `rest`** (los tres puntos juntando parámetros) y ahí se cort
 > ⚠️ En `localStorage` **no** se guardan contraseñas ni datos sensibles: cualquier JavaScript de la
 > página lo puede leer.
 
+
+## Tareas
+
+Cinco tareas graduadas. La difícil 2 es la que convierte esto en un carrito de verdad, y la vamos a
+necesitar armada para las clases de React.
+
+| Nivel | Tarea |
+|---|---|
+| **Fácil** | **El contador en la pestaña**: que el título de la pestaña del navegador muestre cuántos productos hay en el carrito. Una línea: `document.title = …` con un template literal, llamada desde `pintarCarrito`. |
+| **Intermedia 1** | **Filtrar por categoría**: los enlaces de la barra lateral no hacen nada. Haz que filtren el catálogo. Pistas: un solo listener en el `<ul>` (delegación), un `data-categoria` en cada enlace, y `pintarCatalogo` recibiendo la lista que va a pintar en vez de usar `productos` siempre. Ojo: al filtrar se repinta, así que los botones "Agregar" tienen que seguir funcionando. |
+| **Intermedia 2** | **Agrupar por categoría**: en `datos.js`, exporta `contarPorCategoria(items)`: un `reduce` cuyo acumulador es un **objeto**, que devuelva `{ laptops: 1, smartphones: 1, tablets: 1, audio: 2 }`. Pistas: valor inicial `{}`, y adentro `{ ...acc, [p.categoria]: (acc[p.categoria] ?? 0) + 1 }` — esos corchetes hacen que JS **evalúe** el nombre de la propiedad. Muestra el número al lado de cada categoría en la barra lateral. |
+| **Difícil 1** | **El tema oscuro que se recuerda**: un botón que alterne claro y oscuro —pista: `document.documentElement.classList.toggle("dark")` y el `dark:` de Tailwind— y que la elección se **guarde en localStorage**, de modo que al volver a entrar la página abra como la dejaste. Es exactamente lo que hacen las páginas que usas todos los días. |
+| **Difícil 2** | **El carrito con cantidades**: que cada producto entre **una vez** con una propiedad `cantidad`. Si agregas uno que ya está, sube la cantidad en vez de duplicar la fila. Necesitas: buscar con `find` si ya está, y si está, devolver un array **nuevo** con ese ítem copiado y su cantidad + 1 (spread dentro de un `map`), sin mutar nada. En la fila, un `× cantidad` y botones de más y menos. Y con esto, quitar vuelve a ser por **`id`**, no por posición. |
+
 > Basado en el proyecto de referencia TechCart. Datos e imágenes de [DummyJSON](https://dummyjson.com).

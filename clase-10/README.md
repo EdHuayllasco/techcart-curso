@@ -93,4 +93,22 @@ Esta carpeta es el **punto de partida**: el proyecto tal como quedó al terminar
 > ni un error, solo `undefined` en pantalla. Esa es la incomodidad del tipado dinámico que arrastramos
 > desde la Clase 7, y la próxima clase la resolvemos con **TypeScript**.
 
+## Tareas
+
+Cinco tareas graduadas. La difícil 2 es la que convierte esto en un carrito de verdad, y la vamos a
+necesitar armada para las clases de React.
+
+| Nivel | Tarea |
+|---|---|
+| **Fácil** | **El contador en la pestaña**: que el título de la pestaña muestre cuántos productos hay en el carrito. Una línea: `document.title = …` con un template literal, llamada desde `pintarCarrito`. |
+| **Intermedia 1** | **Filtrar por categoría**: los enlaces de la barra lateral siguen sin hacer nada. Haz que filtren el catálogo: un solo listener en el `<ul>` (delegación), un `data-categoria` en cada enlace, y `pintarCatalogo` recibiendo la lista que va a pintar. Con 38 productos ya se nota. Ojo: al filtrar se repinta, así que los botones "Agregar" tienen que seguir funcionando. |
+| **Intermedia 2** | **El aviso del respaldo**: cuando `obtenerProductos` use el plan B, que la tienda lo **diga** — un cartelito con "Mostrando información guardada, no pudimos conectar". Pista: que `obtenerProductos` devuelva `{ productos, esRespaldo }` y que `main.js` decida qué mostrar. |
+| **Difícil 1** | **El buscador**: un `<input>` arriba del catálogo que filtre mientras el usuario escribe. Pistas: el evento es **`input`**, no `click`; filtra con `filter` y `.toLowerCase().includes(...)`; y si no hay resultados, muestra el **estado vacío** con el término buscado. Todo del lado del cliente. |
+| **Difícil 2** | **El carrito con cantidades**: que cada producto entre **una vez** con una propiedad `cantidad`. Si agregas uno que ya está, sube la cantidad en vez de duplicar la fila. Necesitas: buscar con `find` si ya está, y si está, devolver un array **nuevo** con ese ítem copiado y su cantidad + 1 (spread dentro de un `map`), sin mutar nada. En la fila, un `× cantidad` y botones de más y menos. Y con esto, quitar vuelve a ser por **`id`**, no por posición. |
+
+> Y dos que quedaron de la Clase 9, por si quieres recuperarlas: **`contarPorCategoria(items)`** (un
+> `reduce` con acumulador **objeto**, para mostrar el número al lado de cada categoría) y el **tema
+> oscuro que se recuerda** (`classList.toggle("dark")` + `localStorage`). Las dos, con sus pistas, están
+> en el [README de la Clase 9](../clase-09/README.md).
+
 > Basado en el proyecto de referencia TechCart. Datos e imágenes de [DummyJSON](https://dummyjson.com).
