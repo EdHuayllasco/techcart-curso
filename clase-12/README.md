@@ -5,6 +5,18 @@
 > 🟢 **Primera clase que necesita instalar algo: Node.js.** Los pasos están acá abajo — si podés,
 > hacelo **antes** de que empiece la clase.
 
+## ✅ Qué necesitás hoy (checklist)
+
+| | Qué | Estado |
+|---|---|---|
+| 🟢 | **Node.js** (trae npm incluido) | **hay que instalarlo** — pasos acá abajo |
+| 🔵 | **TypeScript** | se instala **en clase**, dentro del proyecto: `npm i -D typescript` |
+| ⚪ | **VS Code** | ya lo tenés · **no hace falta ninguna extensión de TypeScript**, viene incorporado |
+| ⚪ | **Live Server** | ya lo tenés desde la Clase 9 · **hoy es obligatorio**: el proyecto usa módulos ES y con doble clic (`file://`) la página queda en blanco |
+| ⚠️ | **Internet** | para `npm install`, para los 38 productos de DummyJSON y para el CDN de Tailwind |
+
+Nada más. No se instala nada global ni se toca ninguna configuración de tu sistema.
+
 ## 🟢 Instalar Node.js (lee esto primero)
 
 Hasta ahora nos alcanzó con VS Code y el navegador, porque el navegador entiende HTML, CSS y JavaScript.
