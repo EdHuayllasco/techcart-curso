@@ -44,6 +44,53 @@ Si tu versión está más avanzada, **guardala aparte** y compará al final: no 
 | 7. Genérico propio + **checkout** | 40 min | La última deuda de JavaScript, ya en TypeScript. |
 | 8. Cierre | 24 min | Resumen, lecturas, 5 tareas y anticipo a React. |
 
+## 🛠️ La instalación, paso a paso (Bloque 3)
+
+Los tres comandos, parados **dentro de la carpeta del proyecto** (si escribís `ls` o `dir` tenés que ver
+`index.html`):
+
+```bash
+npm init -y                      # crea package.json
+npm install --save-dev typescript   # baja TypeScript a ESTE proyecto
+npx tsc --init                   # crea tsconfig.json
+```
+
+Después, **borrá todo el contenido de `tsconfig.json` y pegá esto** (no lo tecleés, es para no perder
+tiempo con las comas):
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "sourceMap": true
+  },
+  "include": ["src"]
+}
+```
+
+Y en `package.json`, agregá el script (queda `npm run dev` corriendo toda la clase):
+
+```json
+  "scripts": {
+    "dev": "tsc --watch"
+  }
+```
+
+Los últimos tres pasos: renombrá la carpeta **`js/` → `src/`** y los seis archivos de **`.js` a `.ts`**;
+en `index.html` cambiá el `<script>` para que apunte a **`dist/main.js`**; y corré `npm run dev`.
+
+**Comprobación:** abrí la tienda con Live Server. Si ves los 38 productos, ya está — acabás de meter un
+compilador en el medio y la tienda ni se enteró.
+
+> 🆘 **Si la instalación se te traba**, descargá la carpeta **`clase-12-instalado/`** del repo: viene con
+> el `package.json`, el `tsconfig.json` y el `src/` ya armados. Corré `npm install` y `npm run dev` y
+> seguí la clase. Lo tuyo lo miramos en el receso — no te pierdas TypeScript por un problema de rutas.
+
 ## Contenido de la carpeta (el punto de partida)
 - `index.html` y `css/styles.css`: la barra lateral con `data-categoria`, el buscador, el aviso del respaldo y la sección del carrito. El `<script>` todavía apunta a `js/main.js` — **en clase pasa a `dist/main.js`**.
 - `js/datos.js`: el plan B, con `marca` y `valoracion`.
