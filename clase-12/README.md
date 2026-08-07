@@ -2,8 +2,46 @@
 
 > ⏱️ **Duración: 4 h 30 min** de contenido (el receso va aparte).
 > ✅ **Esta carpeta es el punto de partida**: el proyecto tal como quedó cuando se cortó la Clase 11.
-> 🟢 **Primera clase que necesita Node.js.** Antes de empezar, abrí una terminal y escribí `node -v`.
-> Si no responde un número, instalalo desde [nodejs.org](https://nodejs.org) (versión LTS).
+> 🟢 **Primera clase que necesita instalar algo: Node.js.** Los pasos están acá abajo — si podés,
+> hacelo **antes** de que empiece la clase.
+
+## 🟢 Instalar Node.js (lee esto primero)
+
+Hasta ahora nos alcanzó con VS Code y el navegador, porque el navegador entiende HTML, CSS y JavaScript.
+Pero **no entiende TypeScript**: alguien tiene que traducirlo, y ese traductor es un programa que corre
+**fuera** del navegador. Para eso existe **Node.js**.
+
+> 🔗 Si venís de Java: Node es a JavaScript lo que la **JVM** es a Java. Y **npm** —que viene incluido— es
+> tu **Maven**: baja las dependencias y las deja en una carpeta del proyecto.
+
+**Pasos:**
+
+1. Entrá a **[nodejs.org](https://nodejs.org)**.
+2. Vas a ver dos botones. **Bajá el que dice `LTS`**, siempre — es la versión estable, la que usan las
+   empresas. El otro ("Current") trae lo último… y los errores de lo último. La página ya detecta si
+   estás en Windows o en Mac.
+3. Ejecutá el instalador y **dale "Siguiente" a todo**: los valores por defecto están bien.
+   ⚠️ Si aparece una casilla sobre **"Tools for Native Modules"**, **dejala desmarcada** — no la
+   necesitamos y tarda diez minutos más.
+4. **Cuando termine, cerrá la terminal y VS Code, y volvé a abrirlos.**
+
+> ### ⚠️ El paso 4 es el que falla siempre
+> Si no reiniciás la terminal, te va a seguir diciendo que `node` no existe — porque la que ya estaba
+> abierta no se enteró de que apareció un programa nuevo. **Ese es el 90% de los "a mí no me funciona".**
+> Si reiniciaste la terminal y sigue igual, cerrá **VS Code completo** y abrilo de nuevo.
+
+**Comprobación.** Abrí una terminal (en VS Code: `Ver → Terminal`, o `Ctrl+Ñ`) y escribí:
+
+```bash
+node -v     # tiene que responder algo como v22.x
+npm -v      # tiene que responder algo como 10.x
+```
+
+Si las dos responden un número, ya está: **no hace falta instalar nada más en todo el curso**. El número
+exacto da igual.
+
+> 🆘 Si no te funciona y la clase ya empezó, **avisá por el chat y seguí igual**: el Bloque 2 son 25
+> minutos sin tocar la terminal, y existe la carpeta `clase-12-instalado/` como plan B.
 
 Los tres errores que vivimos en la Clase 11 eran **el mismo error**: el respaldo mostró `undefined` en la
 marca, el carrito guardado dijo `S/ NaN`, y el buscador se habría roto si `marca` viniera vacía. En los
