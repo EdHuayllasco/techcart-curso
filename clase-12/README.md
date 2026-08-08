@@ -52,6 +52,35 @@ npm -v      # tiene que responder algo como 10.x
 Si las dos responden un número, ya está: **no hace falta instalar nada más en todo el curso**. El número
 exacto da igual.
 
+### 🪟 Si estás en Windows y `npm -v` te da un error rojo largo
+
+Si `node -v` funciona pero `npm -v` te dice algo como:
+
+```
+npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded because
+running scripts is disabled on this system.
+```
+
+**No desinstales nada: npm está bien instalado.** En Windows, npm se ejecuta a través de un script
+`.ps1`, y PowerShell viene configurado de fábrica para no correr scripts. Es lo más común del mundo.
+
+**Solución rápida (recomendada, no toca nada del sistema): usá Command Prompt en vez de PowerShell.**
+En VS Code, en el panel de la terminal, hacé clic en la flechita `˅` al lado del `+` →
+**Select Default Profile** → **Command Prompt**. Cerrá la terminal, abrila de nuevo, y listo.
+
+**Solución de fondo (si querés dejarlo bien):** en la **misma PowerShell** donde falló, ejecutá:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Respondé `S` y volvé a probar. Es lo que recomienda Microsoft: afecta **solo a tu usuario**, no necesita
+permisos de administrador, y `RemoteSigned` sigue exigiendo firma a los scripts bajados de internet.
+No uses `Bypass` ni `Unrestricted`.
+
+> Si es una laptop del trabajo, puede que la empresa lo tenga bloqueado y el comando falle.
+> En ese caso usá **Command Prompt** y seguí sin problema.
+
 > 🆘 Si no te funciona y la clase ya empezó, **avisá por el chat y seguí igual**: el Bloque 2 son 25
 > minutos sin tocar la terminal, y existe la carpeta `clase-12-instalado/` como plan B.
 
