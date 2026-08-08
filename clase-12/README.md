@@ -134,15 +134,15 @@ npm install --save-dev typescript   # baja TypeScript a ESTE proyecto
 npx tsc --init                   # crea tsconfig.json
 ```
 
-Después, **borrá todo el contenido de `tsconfig.json` y pegá esto** (no lo tecleés, es para no perder
-tiempo con las comas):
+El `tsconfig.json` que genera viene configurado **para Node, no para el navegador**. Así que
+**borrá todo su contenido y pegá esto** (no lo tecleés, es para no perder tiempo con las comas):
 
 ```json
 {
   "compilerOptions": {
     "target": "ES2020",
     "module": "ES2020",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "rootDir": "./src",
     "outDir": "./dist",
     "strict": true,
@@ -151,6 +151,12 @@ tiempo con las comas):
   "include": ["src"]
 }
 ```
+
+> ⚠️ **Ojo con los tutoriales de internet.** Vas a encontrar muchísimos que ponen
+> `"moduleResolution": "node"`. **Esa opción ya no existe**: se eliminó en TypeScript 7, que es la que
+> instala `npm i -D typescript` hoy. Si la usás, el compilador te dice *"Option 'moduleResolution=node10'
+> has been removed"* y no compila nada. Es un buen recordatorio de que en JavaScript el ecosistema se
+> mueve más rápido que los blogs: mirá la fecha del artículo antes de dudar de tu código.
 
 Y en `package.json`, agregá el script (queda `npm run dev` corriendo toda la clase):
 
