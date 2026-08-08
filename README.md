@@ -36,20 +36,13 @@ y por último React.
 - 12. TypeScript aplicado a TechCart: tipos, interfaces y las tres aduanas
 
 **React** (se dicta en TypeScript)
-- 13. React + Vite + JSX
-- 14. Componentes funcionales + props tipadas
-- 15. Renderizado condicional + renderizado de listas
-- 16. Manejo de eventos + useState
-- 17. Estado derivado + buscador
-- 18. useEffect + ciclo de vida
-- 19. Consumo de API + estados de carga y error
-- 20. React Router
-- 21. Formularios controlados + validación por campo
-- 22. Custom hooks + Context API + estado global
-- 23. JWT + sesión + rutas protegidas + variables de entorno
-- 24. Optimización + despliegue en Vercel + arranque del proyecto final
 
-El proyecto final se presenta en semanas aparte, después de la clase 24.
+El bloque de React continúa en un **repositorio nuevo**, con numeración propia: **clase 1 a 12
+de React** (React + Vite + JSX → componentes y props → estado y eventos → useEffect → API →
+Router → formularios → Context → JWT → optimización y despliegue). El enlace se comparte al
+empezar el bloque.
+
+El proyecto final se presenta en semanas aparte, después de la clase 12 de React.
 
 Cada clase se publica aquí después de la sesión, con su código y sus ejercicios. A veces un
 tema se continúa en la clase siguiente: si es así, empezamos con un repaso corto y seguimos.
